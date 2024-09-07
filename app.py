@@ -14,7 +14,7 @@ db.init_app(app)
 jwt.init_app(app)
 
 # Routes
-app.register_blueprint(tasks_bp)
+app.register_blueprint(tasks_bp, url_prefix='/api')
 app.add_url_rule('/login', 'login', authenticate_user, methods=['POST'])
 
 if __name__ == '__main__':
